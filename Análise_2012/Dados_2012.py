@@ -6,7 +6,7 @@ import math
 # VOTAÇOES 2012
 
 #Coletando dados do csv da Votacoes_2012
-votacao_doismiledoze = pd.read_csv(r'C:\Users\Liane\Documents\GitHub\Big_data_py\Big_data_py\Análise_2012\votacao_candidato-municipio_2012_rj.csv', sep=';', encoding='latin1')
+votacao_doismiledoze = pd.read_csv(r'C:\Users\Liane\Documents\GitHub\Big_Data_python\Análise_2012\votacao_candidato-municipio_2012_rj.csv', sep=';', encoding='latin1')
 
 '''olhando as colunas de primeira, temos o seguinte resultado: Index(['sg_uf', 'nm_municipio', 'cd_cargo', 'ds_cargo', 'nr_candidato',
 'nm_candidato', 'nm_urna_candidato', 'sg_partido','ds_composicao_coligacao', 'nr_turno', 'ds_sit_totalizacao','dt_ult_totalizacao', 'sg_ue', 'sq_candidato',
@@ -20,7 +20,7 @@ print('A quantidade de cargos e de pessoas concorrendo no cargo são:', vt) #ds_
 votacao = math.fsum(votacao_doismiledoze['qt_votos_nom_validos'])
 print('A quantidade total de votos totais de 2012 foi de:', votacao) #Quantidade total de votos é de 16179697.0
 
-media_votos = 16179697.0 // 2
+media_votos = votacao // 2
 print('A média dos votos é de:', media_votos) #A média é de 8089848.0
 
 #Calculando o Outlier
@@ -31,7 +31,7 @@ plt.show()
 # ELEITORES 2012
 
 #Coletando dados do csv de Eleitores_2012
-eleitores_doismiledoze = pd.read_csv(r'C:\Users\Liane\Documents\GitHub\Big_data_py\Big_data_py\Análise_2012\Eleitorado por Município - 20-09-2012.csv', sep=';', encoding='latin1')
+eleitores_doismiledoze = pd.read_csv(r'C:\Users\Liane\Documents\GitHub\Big_Data_Python\Análise_2012\Eleitorado por Município - 20-09-2012.csv', sep=';', encoding='latin1')
 
 #Mudando o nome das colunas
 eleitores_doismiledoze.columns = ['Cod_Municipio','Nome_Municipio','Qtd_Locais', 'Qtd_Secoes', 'Qtd_Eleitores']
@@ -48,8 +48,8 @@ plt.show()
 
 #GRÁFICO COMPARATIVO 2012
 
-Eleitores_Aptos_2012 = {'Eleitores': 11893309.0}
-Media_Votos_Recebidos_2012 = {'Media': 8089848.0}
+Eleitores_Aptos_2012 = {'Eleitores': eleitores}
+Media_Votos_Recebidos_2012 = {'Media': votacao}
 
 df = {'Eleitores_Aptos': [i for i in Eleitores_Aptos_2012.values()],
       'Media_Votos_Recebidos': [i for i in Media_Votos_Recebidos_2012.values()]}

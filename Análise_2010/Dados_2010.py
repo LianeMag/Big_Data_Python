@@ -6,7 +6,8 @@ import math
 # VOTAÇOES 2010
 
 #Coletando dados do csv da Votacoes_2010
-votacao_doismiledez = pd.read_csv(r'C:\Users\Liane\Documents\GitHub\Big_data_py\Big_data_py\Análise_2010\votacao_candidato_munzona_2010_RJ.csv', sep=';', encoding='latin1')
+votacao_doismiledez = pd.read_csv(r'C:\Users\Liane\Documents\GitHub\Big_Data_Python\Análise_2010\votacao_candidato_munzona_2010_RJ.csv', 
+                                  sep=';', encoding='latin1')
 
 print(votacao_doismiledez.columns) 
 '''olhando as colunas de primeira, temos o seguinte resultado: Index(['DT_GERACAO', 'HH_GERACAO', 'ANO_ELEICAO', 'CD_TIPO_ELEICAO','NM_TIPO_ELEICAO', 'NR_TURNO', 'CD_ELEICAO', 'DS_ELEICAO', 'DT_ELEICAO','TP_ABRANGENCIA',
@@ -22,7 +23,7 @@ print('A quantidade de cargos e de pessoas concorrendo no cargo são:', vt) #DS_
 votacao = math.fsum(votacao_doismiledez['QT_VOTOS_NOMINAIS'])
 print('A quantidade total de votos totais de 2010 foi de:', votacao) #Quantidade total de votos é de 37582897.0
 
-media_votos = 37582897.0 // 4
+media_votos = votacao // 4
 print('A média dos votos é de:', media_votos) #A média é de 9395724.0
 
 #Calculando o Outlier
@@ -33,7 +34,7 @@ plt.show()
 # ELEITORES 2010
 
 #Coletando dados do csv de Eleitores_2010
-eleitores_doismiledez = pd.read_csv(r'C:\Users\Liane\Documents\GitHub\Big_data_py\Big_data_py\Análise_2010\Eleitorado por Município - 23-09-2010 (1).csv', sep=';', encoding='latin1')
+eleitores_doismiledez = pd.read_csv(r'C:\Users\Liane\Documents\GitHub\Big_Data_Python\Análise_2010\Eleitorado por Município - 23-09-2010 (1).csv', sep=';', encoding='latin1')
 
 '''olhando as colunas de primeira, temos o seguinte resultado: Index(['Cod Municipio', 'Municipio', 
 'Qtd Locais SUM', 'Qtd Secoes SUM','Qtd Eleitores SUM'],dtype='object'), os nomes podem melhorar, vamos tratá-los.'''
@@ -53,8 +54,8 @@ plt.show()
 
 #GRÁFICO COMPARATIVO 2010
 
-Eleitores_Aptos_2010 = {'Eleitores': 11589763.0}
-Media_Votos_Recebidos_2010 = {'Media': 9395724.0}
+Eleitores_Aptos_2010 = {'Eleitores': eleitores}
+Media_Votos_Recebidos_2010 = {'Media': votacao}
 
 df = {'Eleitores_Aptos': [i for i in Eleitores_Aptos_2010.values()],
       'Media_Votos_Recebidos': [i for i in Media_Votos_Recebidos_2010.values()]}

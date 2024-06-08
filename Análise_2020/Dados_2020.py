@@ -6,7 +6,7 @@ import math
 # VOTAÇOES 2020
 
 #Coletando dados do csv da Votacoes_2020
-votacao_doismilevinte = pd.read_csv(r'C:\Users\Liane\Documents\GitHub\Big_data_py\Big_data_py\Análise_2020\votacao_candidato-municipio_2020_rj.csv', sep=';', encoding='latin1')
+votacao_doismilevinte = pd.read_csv(r'C:\Users\Liane\Documents\GitHub\Big_Data_Python\Análise_2020\votacao_candidato-municipio_2020_rj.csv', sep=';', encoding='latin1')
 
 #Contando os cargos
 vt = votacao_doismilevinte['ds_cargo'].value_counts()
@@ -16,7 +16,7 @@ print('A quantidade de cargos e de pessoas concorrendo no cargo são:', vt) #ds_
 votacao = math.fsum(votacao_doismilevinte['qt_votos_nom_validos'])
 print('A quantidade total de votos totais de 2020 foi de:', votacao) #Quantidade total de votos é de 14629639.0
 
-media_votos = 14629639.0 // 2
+media_votos = votacao // 2
 print('A média dos votos é de:', media_votos) #A média é de 7314819.0
 
 #Calculando o Outlier
@@ -27,7 +27,7 @@ plt.show()
 # ELEITORES 2020
 
 #Coletando dados do csv de Eleitores_2020
-eleitores_doismilevinte = pd.read_csv(r'C:\Users\Liane\Documents\GitHub\Big_data_py\Big_data_py\Análise_2020\202011051250_arq_160443.csv', sep=';', encoding='latin1')
+eleitores_doismilevinte = pd.read_csv(r'C:\Users\Liane\Documents\GitHub\Big_Data_Python\Análise_2020\202011051250_arq_160443.csv', sep=';', encoding='latin1')
 
 #Mudando o nome das colunas
 eleitores_doismilevinte.columns = ['Cod_Municipio','Nome_Municipio','Qtd_Locais', 'Qtd_Zonas', 'Qtd_Seções', 'Qtd_Eleitores']

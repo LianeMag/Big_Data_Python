@@ -6,7 +6,7 @@ import math
 # VOTAÇOES 2018
 
 #Coletando dados do csv da Votacoes_2018
-votacao_doismiledezoito = pd.read_csv(r'C:\Users\Liane\Documents\GitHub\Big_data_py\Big_data_py\Análise_2018\votacao_candidato-municipio_2018_rj.csv', sep=';', encoding='latin1')
+votacao_doismiledezoito = pd.read_csv(r'C:\Users\Liane\Documents\GitHub\Big_Data_Python\Análise_2018\votacao_candidato-municipio_2018_rj.csv', sep=';', encoding='latin1')
 
 #Contando os cargos
 vt = votacao_doismiledezoito['ds_cargo'].value_counts()
@@ -16,7 +16,7 @@ print('A quantidade de cargos e de pessoas concorrendo no cargo são:', vt) #ds_
 votacao = math.fsum(votacao_doismiledezoito['qt_votos_nom_validos'])
 print('A quantidade total de votos totais de 2018 foi de:', votacao) #Quantidade total de votos é de 44439124.0
 
-media_votos = 44439124.0 // 5
+media_votos = votacao // 5
 print('A média dos votos é de:', media_votos) #A média é de 8887824.0
 
 #Calculando o Outlier
@@ -27,7 +27,7 @@ plt.show()
 # ELEITORES 2018
 
 #Coletando dados do csv de Eleitores_2018
-eleitores_doismiledezoito = pd.read_csv(r'C:\Users\Liane\Documents\GitHub\Big_data_py\Big_data_py\Análise_2018\Eleitorado por Município - 02-09-2018.csv', sep=';', encoding='latin1')
+eleitores_doismiledezoito = pd.read_csv(r'C:\Users\Liane\Documents\GitHub\Big_Data_Python\Análise_2018\Eleitorado por Município - 02-09-2018.csv', sep=';', encoding='latin1')
 
 '''olhando as colunas de primeira, os nomes podem melhorar, vamos tratá-los.'''
 
