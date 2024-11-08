@@ -8,7 +8,9 @@ import math
 #Coletando dados do csv da Votacoes_2008
 votacao_doismileoito = pd.read_csv(r'C:\Users\Liane\Documents\GitHub\Big_Data_Python\Análise_2008\votacao_candidato_munzona_2008_RJ.csv', sep=';', encoding='latin1')
 
-print(votacao_doismileoito.columns) 
+m = votacao_doismileoito['NM_MUNICIPIO'].value_counts
+print(m) 
+
 '''olhando as colunas de primeira, temos o seguinte resultado: Index(['DT_GERACAO', 'HH_GERACAO', 'ANO_ELEICAO', 'CD_TIPO_ELEICAO','NM_TIPO_ELEICAO', 'NR_TURNO', 
 'CD_ELEICAO', 'DS_ELEICAO', 'DT_ELEICAO','TP_ABRANGENCIA', 'SG_UF', 'SG_UE', 'NM_UE', 'CD_MUNICIPIO','NM_MUNICIPIO', 'NR_ZONA', 'CD_CARGO', 'DS_CARGO', 'SQ_CANDIDATO',
 'NR_CANDIDATO', 'NM_CANDIDATO', 'NM_URNA_CANDIDATO','NM_SOCIAL_CANDIDATO', 'CD_SITUACAO_CANDIDATURA','DS_SITUACAO_CANDIDATURA', 'CD_DETALHE_SITUACAO_CAND',

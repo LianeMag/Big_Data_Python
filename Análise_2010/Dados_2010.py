@@ -55,7 +55,7 @@ plt.show()
 #GRÁFICO COMPARATIVO 2010
 
 Eleitores_Aptos_2010 = {'Eleitores': eleitores}
-Media_Votos_Recebidos_2010 = {'Media': votacao}
+Media_Votos_Recebidos_2010 = {'Media': media_votos}
 
 df = {'Eleitores_Aptos': [i for i in Eleitores_Aptos_2010.values()],
       'Media_Votos_Recebidos': [i for i in Media_Votos_Recebidos_2010.values()]}

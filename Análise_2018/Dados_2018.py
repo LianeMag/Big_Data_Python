@@ -46,8 +46,8 @@ plt.show()
 
 #GRÁFICO COMPARATIVO 2018
 
-Eleitores_Aptos_2018 = {'Eleitores': 12408340.0}
-Media_Votos_Recebidos_2018 = {'Media': 8887824.0}
+Eleitores_Aptos_2018 = {'Eleitores': eleitores}
+Media_Votos_Recebidos_2018 = {'Media': media_votos}
 
 df = {'Eleitores_Aptos': [i for i in Eleitores_Aptos_2018.values()],
       'Media_Votos_Recebidos': [i for i in Media_Votos_Recebidos_2018.values()]}

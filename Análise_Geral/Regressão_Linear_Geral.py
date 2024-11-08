@@ -65,7 +65,6 @@ vt2016 = votacao_doismiledezesseis['ds_cargo'].value_counts()
 votacao2016 = math.fsum(votacao_doismiledezesseis['qt_votos_nom_validos'])
 media_votos2016 = votacao2016 // 2
 
-
 eleitores_doismiledezesseis = pd.read_csv(r'C:\Users\Liane\Documents\GitHub\Big_Data_Python\Análise_2016\Eleitorado por Município - 11.07.2016.csv', 
                                           sep=';', encoding='latin1')
 eleitores_doismiledezesseis.columns = ['Cod_Municipio','Nome_Municipio','Qtd_Locais', 'Qtd_Secoes', 'Qtd_Eleitores']
@@ -110,7 +109,6 @@ print(f'Coeficiente Angular: {c_a}')
 print(f'Intercepto: {inter}')
 
 #Cria previsões usando a equação da regressão
-
 y_pred = c_a * X + inter
 print(y_pred)
 
